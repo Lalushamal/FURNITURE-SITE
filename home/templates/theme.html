@@ -1,0 +1,184 @@
+{% load static %}
+{% load cart_tag %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <head>
+      <meta charset="UTF-8">
+      <title>FURNITURE</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--enable mobile device-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--fontawesome css-->
+      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+      <!--bootstrap css-->
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <!--animate css-->
+      <link rel="stylesheet" href="{% static 'css/animate-wow.css' %}">
+      <!--main css-->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/slick.min.css' %}">
+      <!--responsive css-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+   </head>
+   <body>
+      <header id="header" class="top-head">
+         <!-- Static navbar -->
+         <nav class="navbar navbar-default">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-4 col-sm-12 left-rs">
+                     <div class="navbar-header">
+                        <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"> 
+                        <span class="sr-only">Toggle navigation</span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        </button>
+                        <a href="/" class="navbar-brand"><img src="{% static 'images/logo.png' %}" alt="" /></a>
+                     </div>
+                     <form class="navbar-form navbar-left web-sh">
+                        <div class="form">
+                           <input type="text" class="form-control" placeholder="Search for products...">
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-md-8 col-sm-12">
+                     <div class="right-nav">
+                        <div class="login-sr">
+                           <div class="login-signup">
+                              <ul>
+                                 {% if user.is_authenticated %}
+                                 <li><a href="/accounts/logout">Log Out</a></li>
+                                 {% else %}
+                                 <li><a href="/accounts/login">Login</a></li>
+                                 <li><a class="custom-b" href="/register">Register</a></li>
+                                 {% endif %}
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="help-r hidden-xs">
+                           <div class="help-box">
+                              <ul>
+                                 <li> <span></span><img src="images/flag.png" alt="" /></li>
+                                 <li><a href="/cart-detail"> <button class="btn btn-warning"><b>Cart</b> <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> <b>Item</b>  {{request.session.cart|length}}</button></a></li>
+                                 <li> <a href="/help"><img class="h-i" src="images/help-icon.png" alt="" /> Help </a> </li>
+ 
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="nav-b hidden-xs">
+                           <div class="nav-box">
+                              <ul>
+                                 <li><h3>Hai {{user.username}}<h3></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--/.container-fluid --> 
+         </nav>
+      </header>
+
+{% block content %}
+
+{% endblock content %}
+
+
+
+      <footer>
+        <div class="main-footer">
+           <div class="container">
+              <div class="row">
+                 <div class="footer-top clearfix">
+                    <div class="col-md-2 col-sm-6">
+                       <h2>Find the 
+                          best product.
+                       </h2>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                       <div class="form-box">
+                          <input type="text" placeholder="Enter yopur e-mail" />
+                          <button>Continue</button>
+                       </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                       <div class="help-box-f">
+                          <h4>Question? Call us on 99 33 66 94 00 for help</h4>
+                          <p>Easy setup - no hidden fees - Save up to 50%</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="footer-link-box clearfix">
+                    <div class="col-md-6 col-sm-6">
+                       <div class="left-f-box">
+                          <div class="col-sm-4">
+                             
+                          <div class="col-sm-4">
+                             <h2>ABOUT US</h2>
+                             <ul>
+                                <li><a href="about-us.html">About chamb</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Press</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Terms of use</a></li>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="copyright">
+           <div class="container">
+              <div class="row">
+                 <div class="col-md-8">
+                    <p><img width="90" src="images/logo.png" alt="#" style="margin-top: -5px;" /> All Rights Reserved. Company Name © 2022</p>
+                 </div>
+                 <div class="col-md-4">
+                    <ul class="list-inline socials">
+                       <li>
+                          <a href="">
+                          <i class="fa fa-facebook" aria-hidden="true"></i>
+                          </a>
+                       </li>
+                       <li>
+                          <a href="">
+                          <i class="fa fa-twitter" aria-hidden="true"></i>
+                          </a>
+                       </li>
+                       <li>
+                          <a href="">
+                          <i class="fa fa-instagram" aria-hidden="true"></i>
+                          </a>
+                       </li>
+                       <li>
+                          <a href="#">
+                          <i class="fa fa-linkedin" aria-hidden="true"></i>
+                          </a>
+                       </li>
+                    </ul>
+                    <ul class="right-flag">
+                       <li><a href="#"><img src="images/flag.png" alt="" /> <span>Change</span></a></li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </footer>
+     <!--main js--> 
+     <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script> 
+     <!--bootstrap js--> 
+     <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+     <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+     <script src="{% static 'js/slick.min.js' %}"></script> 
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <!--custom js--> 
+     <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>

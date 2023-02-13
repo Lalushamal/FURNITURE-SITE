@@ -1,0 +1,48 @@
+{% extends "theme.html" %}
+{%  load static %}
+{% block content %}
+
+
+{% load cart_tag %}
+
+
+
+<div class="container">
+<h1><u><center>CART DETAILS</center></u></h1>
+<br>
+
+<div class="row">
+     
+  <div class="col-md-2">NAME</div>
+  
+  <div class="col-md-2">IMAGE</div>
+  
+  <div class="col-md-2">PRICE</div> 
+  
+  <div class="col-md-2">QUANTITY</div>
+  
+  <div class="col-md-4">TOTAL</div> 
+</div>
+{% for key,value in request.session.cart.items %}
+  <div class="row">
+  
+  <div class="col-md-2"> {{value.name}}</div>
+  
+  <div class="col-md-2"><img src="{{value.image}}" style="height: 50px; width: 100px;"></div>
+  
+  <div class="col-md-2">{{value.price}}</div> 
+  
+  <div class="col-md-2">{{value.quantity}} </div>
+  
+  <div class="col-md-4"> {{ value.price|multiply:value.quantity }}</div> 
+  </div>
+  <br>
+  {% endfor %}
+  
+  <div class="row">
+  <div class="col-md-8  text-right"><button class="btn btn-warning"><a href="/place_order">PLACE ORDER</button></a></div>
+  <div class="col-md-4  text-left"><button class="btn btn-danger"><a href="{% url 'cart_clear' %}">CLEAR CART</a></button> <br> <br> </div>
+  </div> 
+</div>
+
+{% endblock content %}

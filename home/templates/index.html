@@ -1,0 +1,187 @@
+     {% extends "theme.html" %}
+     {% load static %}
+     {% block content %}
+   
+     
+     <!-- Modal -->
+      <div class="modal fade lug" id="myModal" role="dialog">
+        <div class="modal-dialog">
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">Change</h4>
+              </div>
+              <div class="modal-body">
+                 <ul>
+                    <li><a href="#"><img src="images/flag-up-1.png" alt="" /> United States</a></li>
+                    <li><a href="#"><img src="images/flag-up-2.png" alt="" /> France </a></li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div id="sidebar" class="top-nav">
+        <ul id="sidebar-nav" class="sidebar-nav">
+           <li><a href="#">Help</a></li>
+           <li><a href="howitworks.html">How it works</a></li>
+           <li><a href="#">chamb for Business</a></li>
+        </ul>
+     </div>
+     <div class="page-content-product">
+        <div class="main-product">
+           <div class="container">
+              <div class="row clearfix">
+                 <div class="find-box">
+                    <h1>Find the best product here.<br> </h1>
+                    <h4>It has never been easier.</h4>
+                    <div class="product-sh">
+                       <div class="col-sm-6">
+                          <div class="form-sh">
+                             <input type="text" placeholder="Search something you love" >
+                          </div>
+                       </div>
+                       
+                       <div class="col-sm-3">
+                          <div class="form-sh"> <a class="btn" href="#">Search</a> </div>
+                       </div>
+                       <p>Browse <a href="#"> all categories </a> here </p>
+                    </div>
+                 </div>
+              </div>
+              <div class="row clearfix">
+               
+               {% for f in connect %}
+               
+               
+               
+                 <div class="col-lg-3 col-sm-6 col-md-3">
+                    <a href="{% url 'product' f.id %}">
+                       <div class="box-img">
+                          <h4>{{f.product_name}}</h4>
+                          <img src="{{f.product_image.url}}" alt="" style="height:200px; width:200px"/>
+                       </div>
+                    </a>
+                 </div>
+                 {% endfor %}
+                 
+                 
+
+
+                 <div class="categories_link">
+                    <a href="#"></a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="cat-main-box">
+        <div class="container">
+           <div class="row panel-row">
+            {% for f in connect %}
+            {% if forloop.counter <= 1 %}
+              <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.0s">
+                 <div class="panel panel-default">
+                    <div class="panel-body">
+                       <img src="{{f.product_image.url}}" class="icon-small" alt="" >
+                       <h4>“Chamb” Your World</h4>
+                       <p>Grow easily with chamb. Create free account.
+                          We help expanding your dream easily.
+                       </p>
+                    </div>
+                 </div>
+              </div>
+   
+              <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                 <div class="panel panel-default">
+                    <div class="panel-body">
+                       <img src="{{f.product_image.url}}" class="icon-small" alt="">
+                       <h4>Smart idea for flexible home</h4>
+                       <p>Grow easily with chamb. Create free account.
+                          We help expanding your business easily.
+                       </p>
+                    </div>
+                 </div>
+              </div>
+      
+              <div class="col-md-4 col-sm-6 wow fadeIn hidden-sm" data-wow-delay="0.4s">
+                 <div class="panel panel-default">
+                    <div class="panel-body">
+                       <img src="{{f.product_image.url}}" class="icon-small" alt="">
+                       <h4>Make your dream</h4>
+                       <p>Grow easily with chamb. Create free account.
+                          We help expanding your business easily.
+                       </p>
+                    </div>
+                 </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+           </div>
+        </div>
+     </div>
+     <div class="products_exciting_box">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                 <div class="exciting_box f_pd">
+                    <img src="images/exciting_img-01.jpg" class="icon-small" alt="" />
+                    <h4>Made with <strong>love</strong>, made to last.
+                    </h4>
+                    <p>You’re in safe hands when you’re choosing Chiltern Oak. We know quality never goes out of fashion. That’s why our furniture is crafted with care from premium materials and hand-picked by specialists. We’re experts, not salespeople. That means our caring customer services team are on hand to help you find the final piece of the puzzle to your home, not a show home. Plus, we’ll deliver straight to your door, free of charge, and with no-risk returns if you change your mind.
+                    </p>
+                 </div>
+              </div>
+              <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                 <div class="exciting_box l_pd">
+                    <img src="images/exciting_img-02.jpg" class="icon-small" alt="" />
+                    <h4><strong>Furniture that fits</strong> Furniture that fits around you....</h4>
+                    <p>Kettle on, world off, feet up. At Chiltern Oak, we understand homes are for living. From drawers that cut out the clutter, to TV units that tame wires gone wild, our furniture leaves you with more time to kick back and relax after a long walk or home cooked Sunday roast. Our ranges help elevate homes to new levels of beautiful and practical.
+                    </p>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     
+     <div class="products">
+        <div class="main-products">
+           <h2>TRENDING PRODUCTS ON CHAMB</h2>
+           <div class="product-slidr">
+              <div class="slider">
+              {% for f in connect %}
+              
+              
+                 <div>
+                    <div class="prod-box">
+                       <div class="prod-i">
+                        <a href="{% url 'product' f.id %}">
+                          <img src="{{f.product_image.url}}" alt="#" style="height:200px; width:200px" />
+                       </a>
+                       </div>
+                       <div class="prod-dit clearfix">
+                          <div class="dit-t clearfix">
+                             <div class="left-ti">
+                              
+                                <h4>{{f.product_name}}</h4>
+                                <p>By <span>{{f.product_description}}</span>  <span></span></p>
+                             </div>
+                             <a href="#">{{f.product_price}}</a>
+                          </div>
+                          <div class="dit-btn clearfix">
+                             <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
+                             <a class="thi" href=""><i class="fa fa-thumbs-up" aria-hidden="true"></i> Add to cart</a>
+                          </div>
+                       </div>
+                    </div> 
+                 </div>
+                {% endfor %}
+
+              </div>
+           </div>
+        </div>
+     </div>
+
+
+       
+     {% endblock content %}

@@ -1,0 +1,251 @@
+{% extends "theme.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<!-- Modal -->
+<div class="modal fade lug" id="myModal" role="dialog">
+    <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content">
+          <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">Change</h4>
+          </div>
+          <div class="modal-body">
+             <ul>
+                <li><a href="#"><img src="images/flag-up-1.png" alt="" /> United States</a></li>
+                <li><a href="#"><img src="images/flag-up-2.png" alt="" /> France </a></li>
+             </ul>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div id="sidebar" class="top-nav">
+    <ul id="sidebar-nav" class="sidebar-nav">
+       <li><a href="#">Help</a></li>
+       <li><a href="#"></a></li>
+    </ul>
+ </div>
+ <div class="terms-conditions product-page">
+    <div class="terms-title">
+       <div class="container">
+          <div class="row">
+             <ol class="breadcrumb">
+                <li><a href="/">Home </a></li>
+             </ol>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="product-page-main">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+
+             <div class="prod-page-title">
+                <h2>{{connect.product_name}}</h2>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-2 col-sm-4">
+             <div class="left-profile-box-m prod-page">
+
+                <div class="pro-img">
+                   <img src="{{connect.product_image.url}}" alt="#" />
+                </div>
+             </div>
+          </div>
+          <div class="col-md-7 col-sm-8">
+             <div class="md-prod-page">
+                <div class="md-prod-page-in">
+                   <div class="page-preview">
+                      <div class="preview">
+
+
+                         <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img src="{{connect.product_image.url}}"  alt="#" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="{{connect.product_image.url}}" alt="#" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="{{connect.product_image.url}}" alt="#" /></div>
+                            <div class="tab-pane" id="pic-4"><img src="{{connect.product_image.url}}" alt="#" /></div>
+                         </div>
+                         <ul class="preview-thumbnail nav nav-tabs">
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{connect.product_image.url}}" alt="#" /></a></li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img src="{{connect.product_image.url}}" alt="#" /></a></li>
+                            <li><a data-target="#pic-3" data-toggle="tab"><img src="{{connect.product_image.url}}" alt="#" /></a></li>
+                            <li><a data-target="#pic-4" data-toggle="tab"><img src="{{connect.product_image.url}}" alt="#" /></a></li>
+                         </ul>
+         
+
+                      </div>
+                   </div>
+                   <div class="btn-dit-list clearfix">
+                      
+                      <div class="right-dit-p">
+                         <div class="like-list">
+                            <ul>
+                               <li>
+                                  <div class="im-b"><img class="" src="images/list-img-01.png" alt=""></div>
+                               </li>
+                               <li>
+                                  <div class="im-b"><img src="images/list-img-02.png" alt=""></div>
+                               </li>
+                               <li>
+                                  <div class="im-b"><img src="images/list-img-03.png" alt=""></div>
+                               </li>
+                               <li>
+                                  <div class="im-b"><img src="images/list-img-04.png" alt=""></div>
+                               </li>
+                               <li>
+                                  <div class="im-b"><img src="images/list-img-05.png" alt=""></div>
+                               </li>
+                               <li>
+                                  <div class="im-b"><img src="images/list-img-06.png" alt=""></div>
+                               </li>
+                               <li>
+                                  <div class="im-b"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="description-box">
+                   <div class="dex-a">
+                      <h4>Description</h4>
+                      <p>{{connect.product_description}}
+                      </p>
+                      
+                      <br>
+                      <p>Small:{{details.product_small}} </p>
+                      <p>Large: {{details.product_large}}</p>
+                   </div>
+                   <div class="spe-a">
+                      <h4>Specifications</h4>
+                      <ul>
+                         <li class="clearfix">
+                            <div class="col-md-4">
+                               <h5>Measurments</h5>
+                            </div>
+                            <div class="col-md-8">
+                               <p>{{details.product_measurment}}</p>
+                            </div>
+                         </li>
+                         <li class="clearfix">
+                            <div class="col-md-4">
+                               <h5>Material</h5>
+                            </div>
+                            <div class="col-md-8">
+                               <p>Material Name</p>
+                            </div>
+                         </li>
+                         <li class="clearfix">
+                            <div class="col-md-4">
+                               <h5>Brand</h5>
+                            </div>
+                            <div class="col-md-8">
+                               <p>{{details.product_brand}}</p>
+                            </div>
+                         </li>
+                         <li class="clearfix">
+                            <div class="col-md-4">
+                               <h5>Shipping</h5>
+                            </div>
+                            <div class="col-md-8">
+                               <p>Shipping worldwide</p>
+                            </div>
+                         </li>
+                         <li class="clearfix">
+                            <div class="col-md-4">
+                               <h5>Warranty</h5>
+                            </div>
+                            <div class="col-md-8">
+                               <p>{{details.product_warrenty}}</p>
+                            </div>
+                         </li>
+                      </ul>
+                   </div>
+                </div>
+             </div>
+             
+             <div class="similar-box">
+                <h2>Similiar products </h2>
+                <div class="row cat-pd">
+                {% for f in data %}
+                {% if forloop.counter >= 5 %}
+
+                   <div class="col-md-6">
+                      <div class="small-box-c">
+                         <div class="small-img-b">
+                            <img class="img-responsive" src="{{f.product_image.url}}" alt="#" style="height:200px; width:300px"/>
+                         </div>
+                         <div class="dit-t clearfix">
+                            <div class="left-ti">
+                               <h4>{{f.product_name}}</h4>
+                            </div>
+                            <a href="{% url 'product' f.id %}" tabindex="0"></a>
+                         </div>
+                         <div class="prod-btn">
+                            <a href="wislist"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist</a>
+
+                            <a href="{% url 'cart_add' connect.id %}"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> Add to Cart</a>
+
+                         </div>
+                      </div>
+                   </div>
+                   {% endif %}
+                   {% endfor %}
+
+                  
+               
+
+                   <div class="d-inline p-2 text-bg-primary"></div>
+
+                   <br>
+                   <div class="d-inline p-2 text-bg-dark"></div>
+                   <br>
+                   <table  style="border: solid; width: 500px; border-color: rgb(0, 188, 235); border-width: 1px;">
+                     {% for a in answer %}
+                     <tr style="border: solid; border-width: 1px;">
+                        <td>
+                           <div class="border border-success p-2 mb-2">{{a.product_name}}</div>
+                           <div class="border border-success p-2" style="--bs-border-opacity: .5;">{{a.review}}</div>
+                     </tr>
+                     {% endfor %}
+                   </table>
+                   
+             
+
+
+                     <br>
+                     <u></u>
+             
+                   
+                   <form method="POST"  style="border: solid; width: 500px; border-color: rgb(9, 235, 28); border-width: 1px;" >
+                    {% csrf_token %} 
+                    <b style="text-align:center;">{{ form|crispy }}</b>
+
+                    <center><button type="button" class="btn btn-success">Success</button></center>
+                     </form>
+                   
+                     
+                </div>
+             </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-12">
+             <div class="price-box-right">
+           
+
+                <h4>Price</h4>
+                <h3> Rs.{{connect.product_price}} <span></span></h3>
+
+                <a href="{% url 'cart_add' connect.id %}">Add To Cart</a>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+ {% endblock content %}
